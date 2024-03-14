@@ -14,7 +14,7 @@ We can watermark two types of models: completion models and Q&A (instruction-fin
 Train a watermarked OPT-1.3b model with a paired OPT-350m detector on the c4 dataset:
 ```bash
 python pretrain_detector.py --model opt-350m --dataset c4 --gen_dataset  # Pretraining step for the detector
-deepspeed --num_gpus 1 main.py --actor_model opt-1.3b --reward_model opt-350m --do_sample --reward_with_scheduler --use_lora --with_tensorboard
+deepspeed --num_gpus 1 main.py --actor_model opt-1.3b --reward_model opt-350m --do_sample --use_lora --with_tensorboard
 ```
 
 Other settings:
@@ -40,7 +40,7 @@ Then we need a reward model to RLHF the model and embed the watermark while trai
 
 Either way, the next step assumes you have put the reward model checkpoint under `./deepspeed_ckpt/opt-350m`. Then we run the co-training:
 ```bash
-deepspeed --num_gpus 1 main_in_alignment.py --actor_model opt-1.3b --reward_model opt-350m --do_sample --reward_with_scheduler --use_lora --with_tensorboard --rlhf_wtm_lamda 0.5
+deepspeed --num_gpus 1 main_in_alignment.py --actor_model opt-1.3b --reward_model opt-350m --do_sample --use_lora --with_tensorboard --rlhf_wtm_lamda 0.5
 ```
 
 Other settings are the same as before.
