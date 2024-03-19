@@ -1,6 +1,16 @@
 ## Learning to Watermark LLM
 
-Released code for the paper [Learning to Watermark LLM-generated Text via Reinforcement Learning](https://arxiv.org/pdf/TODO.pdf)
+Released code for the paper [Learning to Watermark LLM-generated Text via Reinforcement Learning](https://arxiv.org/pdf/2403.10553.pdf)
+
+Cite:
+```latex
+@article{xu2024learning,
+  title={Learning to Watermark LLM-generated Text via Reinforcement Learning},
+  author={Xu, Xiaojun and Yao, Yuanshun and Liu, Yang},
+  journal={arXiv preprint arXiv:2403.10553},
+  year={2024}
+}
+```
 
 ### Prerequisites
 * Tested on Python 3.9 with PyTorch 1.13.1 on a A100-80GB with 256GB memory.
